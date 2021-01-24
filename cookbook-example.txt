@@ -1,0 +1,11 @@
+
+# Generate cookbook directory
+mkdir cookbooks
+cd cookbooks/
+chef generate cookbook webdeploy
+
+# Generate template
+chef generate template webdeploy index.html
+
+# Run cookbook
+sudo chef-client --local-mode --runlist 'recipe[webdeploy]'
